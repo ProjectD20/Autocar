@@ -1,0 +1,25 @@
+<mat-card class="card">
+
+  <mat-form-field *ngIf="editMode">
+    <input matInput placeholder="Text of the question" [(ngModel)]="question.text">
+  </mat-form-field>
+
+  <mat-card-header>
+    <mat-card-title *ngIf="!editMode">{{ question.text }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <app-answer [(answers)]="question.answers" [editMode]="editMode" [editable]="editable" (selectedAnswer)="handleSelectAnswer($event)"></app-answer>
+  </mat-card-content>
+
+
+  <mat-card-actions *ngIf="editable">
+    <button mat-icon-button (click)="editMode = !editMode" *ngIf="!editMode">
+      <mat-icon class="md-24">mode_edit</mat-icon>
+    </button>
+    <button mat-mini-fab color="primary" (click)="editMode = !editMode" *ngIf="editMode">
+      <mat-icon class="md-24">check</mat-icon>
+    </button>
+  </mat-card-actions>
+
+</mat-card>

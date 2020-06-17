@@ -1,0 +1,14 @@
+<button mat-raised-button color="primary" (click)="newQuizz()">
+    <mat-icon>add</mat-icon>
+    Create a quizz
+</button>
+
+<h2>Existing quizzes:</h2>
+<ul>
+    <li *ngFor="let q of quizzes">
+        <button mat-raised-button (click)="goToQuizz(q.id)">
+            <mat-icon>settings</mat-icon>
+            {{ q.name }}
+        </button>
+    </li>
+</ul>

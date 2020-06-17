@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="toolbar funnyText">
+  {{title}}
+  <span class="spacer"></span>
+
+  <button mat-button routerLink="/start">
+    <mat-icon>play_arrow</mat-icon>
+    <span>Start</span>
+  </button>
+
+  <button mat-button routerLink="/manage">
+    <mat-icon>list</mat-icon>
+    <span>Manage quizzes</span>
+  </button>
+</mat-toolbar>
+
+<div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutAlign.xs="start">
+  <div class="flex-item" fxFlex="10%" fxFlex.xs="0%"></div>
+  <div class="flex-item" fxFlex="80%" fxFlex.xs="100%">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="flex-item" fxFlex="10%" fxFlex.xs="0%"></div>
+</div>

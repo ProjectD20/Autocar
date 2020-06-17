@@ -1,0 +1,42 @@
+<mat-card>
+	<div class="welcome funnyText">
+		<h1>Welcome to QuizzManiac!</h1>
+		<p>This is an demo app to showcase several aspects of Angular.</p>
+
+		<p>You can create a new quizz adding questions and anwsers or play an existing quizz:</p>
+
+		<div class="button-row">
+		</div>
+
+		<ul>
+			<li *ngFor="let q of quizzes">
+				<button mat-raised-button (click)="playQuizz(q.id)">
+					<mat-icon>play_arrow</mat-icon>
+					{{ q.name }}
+				</button>
+			</li>
+			<li>
+				<button mat-raised-button color="primary" (click)="newQuizz()">
+					<mat-icon>add</mat-icon>
+					Create a new one
+				</button>
+			</li>
+		</ul>
+	</div>
+</mat-card>
+
+
+<mat-card id="chuck"> 
+	<mat-card-header>
+		<mat-card-title>If you need inspiration you can ask <strong>Chuck Norris</strong> for some</mat-card-title> 
+	</mat-card-header> 
+
+	<mat-card-content>
+		<button mat-raised-button (click)="chuckNorris()">Gimme some roundhouse kick</button>
+		
+		<div *ngIf="chuckNorrisWisdom">
+			<img [src]="chuckNorrisWisdom.icon_url" alt="Chuck Norris Countenance">
+			<p>{{ chuckNorrisWisdom.value }}</p>
+		</div>
+	</mat-card-content> 
+</mat-card>

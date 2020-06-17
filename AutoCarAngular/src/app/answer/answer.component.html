@@ -1,0 +1,33 @@
+<mat-radio-group *ngIf="editMode" class="radio-group" [(ngModel)]="correctAnswer" (change)="change(correctAnswer)">
+  <mat-radio-button class="radio-button" *ngFor="let answer of answers; let i = index" [value]="answer">
+
+    <mat-form-field *ngIf="editMode">
+      <input matInput placeholder="Answer" [(ngModel)]="answer.text">
+    </mat-form-field>
+
+    <button mat-icon-button (click)="remove(i)" *ngIf="answers.length > 1">
+      <mat-icon class="md-24">delete</mat-icon>
+    </button>
+
+  </mat-radio-button>
+</mat-radio-group>
+
+<ul *ngIf="!editMode && editable">
+  <li *ngFor="let answer of answers">
+    <button class="answerButton" mat-raised-button *ngIf="!answer.isCorrect" color="basic">{{ answer.text }}</button>
+    <button class="answerButton" mat-raised-button *ngIf="answer.isCorrect" color="accent">{{ answer.text }}</button>
+  </li>
+</ul>
+
+<ul *ngIf="!editable">
+  <li *ngFor="let answer of answers">
+    <button class="answerButton" mat-raised-button color="basic" (click)="select(answer)">{{ answer.text }}</button>
+  </li>
+</ul>
+ 
+
+<mat-card-actions *ngIf="editMode">
+  <button mat-icon-button (click)="newAnswer()">
+    <mat-icon class="md-24">plus_one</mat-icon>
+  </button>
+</mat-card-actions>
