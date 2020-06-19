@@ -18,7 +18,8 @@ public class Ville {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	private String nomVille;
-
+	 //@ManyToMany
+	    //Set<Course> likedCourses;
 
 	public long getId() {
 		return id;
@@ -46,5 +47,6 @@ public class Ville {
 	public Ville() {
 		// TODO Auto-generated constructor stub
 	}
+	
 
 }
