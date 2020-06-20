@@ -41,17 +41,17 @@ public class Itineraire {
 	
 	//principale fonctionalité : retourne les itineraire possible entre S et D verifiant B et H
 	@GetMapping("/GetItiniraires")
-	public String[][] getVilles(@RequestParam String D,
+	public String getVilles(@RequestParam String Destination,
 					@RequestParam String Source,
 					@RequestParam int min,
 					@RequestParam int MAX) {
-       System.out.println(D);
+       System.out.println(Destination);
        System.out.println(Source);
        System.out.println(min);
        System.out.println(MAX);
 	
 		//return (String[][]) villeReposotery.findAll();
-		return null;
+		return Destination;
     }
 }
 
