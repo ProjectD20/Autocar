@@ -12,7 +12,6 @@ import com.example.demo.models.Ville;
  * @author Mahmoud
  *
  */
-@Repository
-public interface VilleRepository  extends CrudRepository<Ville, Long>{
 
-}
+@Repository
+public interface VilleRepository extends CrudRepository<Ville, Long>{}
