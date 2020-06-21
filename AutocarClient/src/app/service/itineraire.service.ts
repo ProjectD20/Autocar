@@ -12,7 +12,7 @@ export class ItineraireService {
 
     this.ItiniraireUrl = 'http://localhost:8080/GetItiniraires' ;
   }
-
+//doit etre refaite dans la phase final avec des parametres dynamique venant du composant qui permet recherche itineraire
   public RechercherItiniraires(): Observable<any[]> {
     return this.http.get<any[]>(this.ItiniraireUrl
 , {
