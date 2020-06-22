@@ -1,7 +1,7 @@
-<!--div class="card my-5">
+<div class="card my-5">
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #ItiForm="ngForm">
-      <div class="form-group">
+      <!--div class="form-group">
         <label for="source">Source</label>
         <input type="text" [(ngModel)]="source" 
           class="form-control"
@@ -9,8 +9,8 @@
           name="source"
           placeholder="Entrer la source"
           required #source="ngModel">
-      </div>
-      <div [hidden]="!source.pristine" class="alert alert-danger"> Source est  requis</div>
+      </div-->
+      <!--div [hidden]="!source.pristine" class="alert alert-danger"> Source est  requis</div-->
       <div class="form-group">
         <label for="budjet">Budjet</label>
         <input type="number" [(ngModel)]="budjet" 
@@ -18,18 +18,18 @@
           id="budjet"
           name="budjet"
           placeholder="Enter Votre Budjet Maximal"
-          required # budjet="ngModel">
+          required #budjet="ngModel">
 	  </div>
 	  
-<div class="example-wrapper">
+<!--div class="example-wrapper">
       <kendo-combobox [data]="listItems" [placeholder]="'Duree du voyage Maximal'"></kendo-combobox>
-	</div>
+	</div-->
 	
- <button type="submit" [disabled]="! ItiForm.form.valid" 
-        class="btn btn-info">Submit</button>
+ <!--button type="submit" [disabled]="! ItiForm.form.valid" 
+        class="btn btn-info">Submit</button-->
     </form>
   </div>
-</div-->
+</div>
 <div>
   <p> listing works</p>
 </div>
