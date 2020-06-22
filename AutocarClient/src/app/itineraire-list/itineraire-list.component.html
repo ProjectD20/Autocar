@@ -10,7 +10,6 @@
 <div>
       <label for="source">Ville de départ</label>
    <select class="form-control" id="source" [(ngModel)]="source" >
-    <option value="" disabled selected>Sélectionner la Ville de départ</option>
       <option value="Lille">Lille</option>
     </select>    
 </div>
@@ -19,7 +18,6 @@
 <div>
       <label for="destination">Ville de destination</label>
    <select class="form-control" id="destination" [(ngModel)]="destination" >
-    <option value="" disabled selected>Sélectionner la Ville de destination</option>
       <option value="Paris">Paris</option>
     </select>    
 </div>
@@ -27,20 +25,21 @@
 
 <div>
 <label for="duree">Budjet maximal du voyage</label>
-   <select class="form-control" id="duree" [(ngModel)]="duree" >
-    <option value="" disabled selected>Sélectionner le budjet maximal du voyage :</option>
-      <option value="10">10</option>
+<fieldset>
+
+   <select class="form-control" id="budjet" [(ngModel)]="budjet"  required>
+    <option value="10">10</option>
       <option value="8">8</option>
       <option value="6">6</option>
       <option value="4">4</option>
       <option value="2">2</option>
-    </select> 
+    </select>  </fieldset>
+
 </div>
 
 <div>
 <label for="duree">Durée du voyage</label>
    <select class="form-control" id="duree" [(ngModel)]="duree" >
-    <option value="" disabled selected>Sélectionner la durée maximal du voyage :</option>
       <option value="3h00">3h00</option>
       <option value="3h30">3h30</option>
       <option value="4h00">4h00</option>
@@ -55,8 +54,8 @@
 
 </div>  
     	
- <button type="submit" [disabled]="!source" 
-        class="btn btn-info">Submit</button>
+        <button class="btn btn-success" type="button" id="buttonSearch" (click)="gt()">
+          Rechercher </button>
         
       </div>
     </div>

@@ -8,12 +8,15 @@ package com.example.demo.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
 import com.example.demo.repository.Arret_BusRepository;
 import com.example.demo.repository.VilleRepository;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
 
 /**
  * @author Mahmoud
@@ -40,11 +43,15 @@ public class Itineraire {
 	
 	
 	//principale fonctionalité : retourne les itineraire possible entre S et D verifiant B et H
-	@GetMapping("/GetItiniraires")
-	public String GetItiniraires(@RequestParam String params) {
-      	
+	@RequestMapping(value = "/GetItiniraires", method = RequestMethod.GET)
+	public String [][] GetItiniraires(@RequestParam("Source") String Source,
+            @RequestParam("Budjet") String Budjet,
+            @RequestParam("Duree") String Duree) {
+      	System.out.println(Source);
 		//return (String[][]) villeReposotery.findAll();
-		return params;
+      	String [][] matrix =  { {"Lille","Compiègne","Paris"}, {"Lille","Arras","Paris"} };
+
+		return matrix;
     }
 }
 
