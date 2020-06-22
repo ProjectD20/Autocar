@@ -3,45 +3,66 @@
     <div class="col-10">
       <div class="jumbotron">
         <h2>Angular Reactive Form validation</h2>
-        <form name="form" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
-          <div class="form-group">
-            <label for="source">Source</label>
-            <input type="text" [(ngModel)]="source"  class="form-control" formControlName="source" [ngClass]="{'is-invalid':form.get('source').touched && form.get('source').invalid}" required />
-            <div class="invalid-feedback">
-              <div>Source est requis</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="budjet">Budjet</label>
-            <input type="number" [(ngModel)]="budjet" class="form-control" formControlName="budjet" [ngClass]="{'is-invalid':form.get('budjet').touched && form.get('budjet').invalid}" required />
-            <div class="invalid-feedback">
-              <div>budjet est  requis</div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="duree">Duree du Voyage</label>
-<mat-form-field>
-  <select matNativeControl required>
-    <option value="3h00">3h00</option>
-    <option value="3h30">3h30</option>
-    <option value="4h00">4h00</option>
-    <option value="4h30">4h30</option>
-     <option value="5h00">5h00</option>
-  </select>
-</mat-form-field>
-            <div class="invalid-feedback">
-              <div>duree est  requis</div>
-            </div>
-          </div>
-      
-          <div class="form-group">
-            <button class="btn btn-primary"  [disabled]="!form.valid">Submit</button>
-          </div>
-        </form>
+     <div >
+
+
+
+<div>
+      <label for="source">Ville de départ</label>
+   <select class="form-control" id="source" [(ngModel)]="source" >
+    <option value="" disabled selected>Sélectionner la Ville de départ</option>
+      <option value="Lille">Lille</option>
+    </select>    
+</div>
+
+
+<div>
+      <label for="destination">Ville de destination</label>
+   <select class="form-control" id="destination" [(ngModel)]="destination" >
+    <option value="" disabled selected>Sélectionner la Ville de destination</option>
+      <option value="Paris">Paris</option>
+    </select>    
+</div>
+
+
+<div>
+<label for="duree">Budjet maximal du voyage</label>
+   <select class="form-control" id="duree" [(ngModel)]="duree" >
+    <option value="" disabled selected>Sélectionner le budjet maximal du voyage :</option>
+      <option value="10">10</option>
+      <option value="8">8</option>
+      <option value="6">6</option>
+      <option value="4">4</option>
+      <option value="2">2</option>
+    </select> 
+</div>
+
+<div>
+<label for="duree">Durée du voyage</label>
+   <select class="form-control" id="duree" [(ngModel)]="duree" >
+    <option value="" disabled selected>Sélectionner la durée maximal du voyage :</option>
+      <option value="3h00">3h00</option>
+      <option value="3h30">3h30</option>
+      <option value="4h00">4h00</option>
+      <option value="4h30">4h30</option>
+      <option value="5h00">5h00</option>
+    </select> 
+</div>
+    
+<p>
+  <br>
+</p>
+
+</div>  
+    	
+ <button type="submit" [disabled]="!source" 
+        class="btn btn-info">Submit</button>
+        
       </div>
     </div>
   </div>
 </div>
+  
 <div>
   <p> listing works</p>
 </div>
