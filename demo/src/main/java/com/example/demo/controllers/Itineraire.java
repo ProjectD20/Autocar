@@ -41,12 +41,8 @@ public class Itineraire {
 	
 	//principale fonctionalité : retourne les itineraire possible entre S et D verifiant B et H
 	@GetMapping("/GetItiniraires")
-	public String GetItiniraires(@RequestParam String Source,
-					@RequestParam int budjet,
-					@RequestParam String duree) {
-       System.out.println(Source);
-       System.out.println(budjet);
-       System.out.println(duree);
+	public String GetItiniraires(@RequestParam String parms) {
+      
 	
 		//return (String[][]) villeReposotery.findAll();
 		return Source;

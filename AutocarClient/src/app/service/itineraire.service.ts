@@ -8,19 +8,19 @@ import { JsonPipe } from '@angular/common';
 })
 export class ItineraireService {
     private ItiniraireUrl: string;
-  private params :HttpParams;
+  private params: HttpParams;
   constructor(private http: HttpClient) {
-    
+
     this.ItiniraireUrl = 'http://localhost:8080/GetItiniraires' ;
-    this.params=new HttpParams();
+    this.params = new HttpParams();
   }
 // doit etre refaite dans la phase final avec des parametres dynamique venant du composant qui permet recherche itineraire
-  public RechercherItiniraires(source: string, budjet: number, duree : string): Observable<any[]> {
-    //stringify budjet 
-    let budjets = budjet.toString();
-this.params.set('Source',source);
-this.params.set('Budjet',budjets);
-this.params.set('Duree', duree);
+  public RechercherItiniraires(source: string, budjet: number, duree: string): Observable<any[]> {
+    // stringify budjet
+    const budjets = budjet.toString();
+    this.params.set('Source', source);
+    this.params.set('Budjet', budjets);
+    this.params.set('Duree', duree);
 
     return this.http.get<any[]>(this.ItiniraireUrl, { params: this.params});
 }
