@@ -1,33 +1,45 @@
-<div class="card my-5">
-  <div class="card-body">
-    <form (ngSubmit)="onSubmit()" #ItiForm="ngForm">
-      <!--div class="form-group">
-        <label for="source">Source</label>
-        <input type="text" [(ngModel)]="source" 
-          class="form-control"
-          id="source"
-          name="source"
-          placeholder="Entrer la source"
-          required #source="ngModel">
-      </div-->
-      <!--div [hidden]="!source.pristine" class="alert alert-danger"> Source est  requis</div-->
-      <div class="form-group">
-        <label for="budjet">Budjet</label>
-        <input type="number" [(ngModel)]="budjet" 
-          class="form-control"
-          id="budjet"
-          name="budjet"
-          placeholder="Enter Votre Budjet Maximal"
-          required #budjet="ngModel">
-	  </div>
-	  
-<!--div class="example-wrapper">
-      <kendo-combobox [data]="listItems" [placeholder]="'Duree du voyage Maximal'"></kendo-combobox>
-	</div-->
-	
- <!--button type="submit" [disabled]="! ItiForm.form.valid" 
-        class="btn btn-info">Submit</button-->
-    </form>
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <div class="jumbotron">
+        <h2>Angular Reactive Form validation</h2>
+        <form name="form" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
+          <div class="form-group">
+            <label for="source">Source</label>
+            <input type="text" [(ngModel)]="source"  class="form-control" formControlName="source" [ngClass]="{'is-invalid':form.get('source').touched && form.get('source').invalid}" required />
+            <div class="invalid-feedback">
+              <div>Source est requis</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="budjet">Budjet</label>
+            <input type="number" [(ngModel)]="budjet" class="form-control" formControlName="budjet" [ngClass]="{'is-invalid':form.get('budjet').touched && form.get('budjet').invalid}" required />
+            <div class="invalid-feedback">
+              <div>budjet est  requis</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="duree">Duree du Voyage</label>
+<mat-form-field>
+ng  <select matNativeControl required>
+    <option value="3h00">3h00</option>
+    <option value="3h30">3h30</option>
+    <option value="4h00">4h00</option>
+    <option value="4h30">4h30</option>
+     <option value="5h00">5h00</option>
+  </select>
+</mat-form-field>
+            <div class="invalid-feedback">
+              <div>duree est  requis</div>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <button class="btn btn-primary"  [disabled]="!form.valid">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 <div>
