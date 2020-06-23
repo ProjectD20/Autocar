@@ -40,6 +40,7 @@ public class Arret_BusController {
 	@PostMapping("/createArret")
 	void addArret(@RequestBody Arret_Bus arret) {
 		arret_BusRepository.save(arret);
+		
     }
 	
 	

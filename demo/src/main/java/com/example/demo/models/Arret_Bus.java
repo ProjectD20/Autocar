@@ -16,11 +16,11 @@ import javax.persistence.Id;
 public class Arret_Bus {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	private long ida;
 	private long id_Source; // id Ville source du bus
 	private long id_Ville_Arret; //id ville Arret du bus
 	private long id_detination; //id ville destinataire du bus
-	private int DSA; //distance entre Ville Source et ville D'arret
+	private int DSA; //distance entre Ville Source et ville D'arret en km
 
 	/**
 	 * 
@@ -31,11 +31,11 @@ public class Arret_Bus {
 	}
 
 	public long getId() {
-		return id;
+		return ida;
 	}
 
 	public void setId(long id) {
-		this.id = id;
+		this.ida = id;
 	}
 
 	public long getId_Source() {
@@ -69,5 +69,20 @@ public class Arret_Bus {
 	public void setDSA(int dSA) {
 		DSA = dSA;
 	}
+
+	public Arret_Bus( long id_Source, long id_Ville_Arret, long id_detination, int dSA) {
+		super();
+		this.id_Source = id_Source;
+		this.id_Ville_Arret = id_Ville_Arret;
+		this.id_detination = id_detination;
+		DSA = dSA;
+	}
+
+	@Override
+	public String toString() {
+		return "Arret_Bus [ida=" + ida + ", id_Source=" + id_Source + ", id_Ville_Arret=" + id_Ville_Arret
+				+ ", id_detination=" + id_detination + ", DSA=" + DSA + "]";
+	}
+	
 
 }

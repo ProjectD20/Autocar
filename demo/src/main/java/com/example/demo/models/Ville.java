@@ -26,6 +26,12 @@ public class Ville {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Ville [id=" + id + ", nomVille=" + nomVille + "]";
+	}
+
+
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -46,6 +52,11 @@ public class Ville {
 	 */
 	public Ville() {
 		// TODO Auto-generated constructor stub
+	}
+
+
+	public Ville(String name) {
+		this.nomVille=name;
 	}
 	
 

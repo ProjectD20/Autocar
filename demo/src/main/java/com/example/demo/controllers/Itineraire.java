@@ -42,12 +42,14 @@ public class Itineraire {
 	}
 	
 	
+	
 	//principale fonctionalité : retourne les itineraire possible entre S et D verifiant B et H
 	@RequestMapping(value = "/GetItiniraires", method = RequestMethod.GET)
 	public String [][] GetItiniraires(@RequestParam("Source") String Source,
             @RequestParam("Budjet") String Budjet,
             @RequestParam("Duree") String Duree) {
       	System.out.println(Source);
+      	
 		//return (String[][]) villeReposotery.findAll();
       	String [][] matrix =  { {"Lille","Compiègne","Paris"}, {"Lille","Arras","Paris"} };
 
