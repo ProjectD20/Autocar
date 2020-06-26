@@ -33,12 +33,17 @@ public class DemoApplication {
 		        villeRepository.save(arras);
 		        Ville Compiegne=new Ville("Compiegne");
 		        villeRepository.save(Compiegne);
+		        Ville Lens=new Ville("Lens");
+		        villeRepository.save(Lens);
 	        //ajout statique des 3 Ville exemple dans la base 
 		        Arret_Bus ab1=new Arret_Bus(lille.getId(),arras.getId(),paris.getId(),53);
 		        Arret_Bus ab2=new Arret_Bus(lille.getId(),Compiegne.getId(),paris.getId(),149);
+		        Arret_Bus ab3=new Arret_Bus(lille.getId(),Lens.getId(),paris.getId(),100);
 
 		        arretRepository.save(ab1);
 	        	arretRepository.save(ab2);
+	        	arretRepository.save(ab3);
+
 	        	arretRepository.findAll().forEach(System.out::println);
 	        	villeRepository.findAll().forEach(System.out::println);
 	        	

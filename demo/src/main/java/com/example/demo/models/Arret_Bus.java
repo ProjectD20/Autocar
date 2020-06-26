@@ -13,7 +13,7 @@ import javax.persistence.Id;
  *
  */
 @Entity
-public class Arret_Bus {
+public class Arret_Bus  implements Comparable<Arret_Bus>{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long ida;
@@ -83,6 +83,13 @@ public class Arret_Bus {
 		return "Arret_Bus [ida=" + ida + ", id_Source=" + id_Source + ", id_Ville_Arret=" + id_Ville_Arret
 				+ ", id_detination=" + id_detination + ", DSA=" + DSA + "]";
 	}
+	
+	@Override
+	public int compareTo(Arret_Bus a1) {
+		return this.getDSA() - a1.getDSA();
+	//return	a1.getDSA() - this.getDSA();
+	}
+
 	
 
 }

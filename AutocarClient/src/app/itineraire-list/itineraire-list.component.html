@@ -2,13 +2,14 @@
   <div class="row">
     <div class="col-10">
       <div class="jumbotron">
-        <h2>Angular Reactive Form validation</h2>
+        <h2>Choisir vos option de recherche</h2>
+        <br>
      <div >
 
 
 
 <div>
-      <label for="source">Ville de départ</label>
+      <label for="source">Ville de dÃ©part</label>
    <select class="form-control" id="source" [(ngModel)]="source" >
       <option value="Lille">Lille</option>
     </select>    
@@ -38,7 +39,7 @@
 </div>
 
 <div>
-<label for="duree">Durée du voyage</label>
+<label for="duree">DurÃ©e du voyage</label>
    <select class="form-control" id="duree" [(ngModel)]="duree" >
       <option value="3h00">3h00</option>
       <option value="3h30">3h30</option>
@@ -62,7 +63,24 @@
   </div>
 </div>
   
-<div>
-  <p> listing works</p>
-</div>
 
+<div class="container" *ngIf="itiniraires">
+  <div class="row">
+    <div class="col-10">
+            <div class="jumbotron">
+
+<div class="row"  *ngFor="let Current_itiniraire of itiniraires" style="display:inline"> 
+   <p style="display:inline">Lille   -></p>
+
+<div class="col"  *ngFor="let Current_ville of Current_itiniraire" style="display:inline"> 
+                      <div *ngIf="Current_ville!='direct'" style="display:inline">{{Current_ville}}-></div> 
+                    
+</div>
+<p style="display:inline">Paris</p>
+<p><br></p>
+</div>
+     
+    </div>
+    </div>
+  </div>
+</div>

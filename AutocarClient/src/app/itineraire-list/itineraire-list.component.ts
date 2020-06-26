@@ -10,8 +10,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class ItineraireListComponent implements OnInit {
   ///declarations
 
-  itiniraires: any[][];
- private source: string;
+itiniraires: any[][];
+private source: string;
 private budjet: number;
 private duree: string;
 private destination: string;
@@ -21,8 +21,6 @@ constructor(private itiniraireService: ItineraireService) {
   this.budjet=10;
   this.duree="3h00";
   this.destination="Paris";
-
-
   }
 /*
   onSubmit() {
