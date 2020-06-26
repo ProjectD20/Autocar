@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { ItineraireListComponent } from './itineraire-list/itineraire-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AjouterVilleComponent } from './ajouter-ville/ajouter-ville.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItineraireListComponent
+    ItineraireListComponent,
+    AjouterVilleComponent
   ],
   imports: [
     BrowserModule,
