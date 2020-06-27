@@ -33,11 +33,11 @@ public void contestLoads() throws Exception
 			.accept(org.springframework.http.MediaType.APPLICATION_JSON))
 	.andReturn();
 	
-		System.out.println(mvcResult.getResponse());
 	Mockito.verify(villeRepository).findAll();
 	Mockito.verify(arret_BusRepository).findAll();
 
-	
+	System.out.println(mvcResult.getResponse());
+
 }
 	public UnitTest() {
 		// TODO Auto-generated constructor stub
